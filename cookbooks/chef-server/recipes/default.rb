@@ -4,6 +4,8 @@
 # Recipe:: default
 #
 
+package "expect"
+
 # Add the opscode deb repo
 apt_repository "opscode" do
   uri "http://apt.opscode.com"
