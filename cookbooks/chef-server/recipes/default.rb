@@ -4,6 +4,7 @@
 # Recipe:: default
 #
 
+# Add the opscode deb repo
 apt_repository "opscode" do
   uri "http://apt.opscode.com"
   distribution "lucid-0.10"
@@ -12,6 +13,7 @@ apt_repository "opscode" do
   action :add
 end
 
+# Set the debconf options for the installation process
 directory "/var/cache/local/preseeding" do
   owner "root"
   group "root"
@@ -32,6 +34,7 @@ template "/var/cache/local/preseeding/chef-server.seed" do
   notifies :run, resources(:execute => "preseed chef-server"), :immediately
 end
 
+# Install chef client and server
 package "chef-server"
 
 # Create chef directory for vagrant user.
