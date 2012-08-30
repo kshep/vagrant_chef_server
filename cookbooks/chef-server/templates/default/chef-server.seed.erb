@@ -1,0 +1,3 @@
+chef-server-webui   chef-server-webui/admin_password password <%= node[:chef_server][:webui_admin_password] %>
+chef-solr           chef-solr/amqp_password password <%= node[:chef_server][:amqp_password] %>
+chef                chef/chef_server_url string <%= node[:chef_server][:url] %>
